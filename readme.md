@@ -12,11 +12,11 @@ source myvenv/bin/activate
 pip install -r requirements.txt
 
 
-# Create Django project (replace 'myproject' with your desired name)
-django-admin startproject myproject
+# Create Django project 
+django-admin startproject medical_diagnosis
 
 # Change directory
-cd myproject
+cd medical_diagnosis
 
 # Run development server
 python manage.py runserver
