@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Reports</h2>
+  {% for report in reports %}
+    <div class="report">
+      <h3>Report for {{ report.patient_name }}</h3>
+      <p>Date of Birth: {{ report.date_of_birth }}</p>
+      <p>Gender: {{ report.gender }}</p>
+     
+      <a href="{% url 'view_report' report_id=report.id %}">View Details</a>
+    </div>
+    <hr>
+  {% empty %}
+    <p>No reports yet.</p>
+  {% endfor %}
+{% endblock %}

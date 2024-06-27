@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Predictions{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-center">Predictions</h2>
+                    </div>
+                    <div class="card-body">
+                        {% if predictions %}
+                            <div class="alert alert-success">
+                                <h5>Predicted Disease: {{ predictions.predicted_class }}</h5>
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">CNV</th>
+                                            <th scope="col">DME</th>
+                                            <th scope="col">DRUSEN</th>
+                                            <th scope="col">NORMAL</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>{{ predictions.CNV  }}</td>
+                                            <td>{{ predictions.DME  }}</td>
+                                            <td>{{ predictions.DRUSEN   }}</td>
+                                            <td>{{ predictions.NORMAL   }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        {% else %}
+                            <div class="alert alert-info">
+                                No predictions available.
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

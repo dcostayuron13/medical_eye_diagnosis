@@ -1,0 +1,20 @@
+<!-- home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="jumbotron">
+            <h1 class="display-4 text-center">Welcome to Eye Medical App</h1>
+            <p class="lead text-center">This is a ML web application that allows to upload medical OCT images and get predictions for eye diseases.</p>
+            <hr class="my-4">
+            <div class="text-center">
+                <a class="btn btn-primary btn-lg" href="{% url 'upload_image' %}" role="button">Upload Image</a>
+                <!-- Add a button for creating reports -->
+<!--                <a class="btn btn-success btn-lg" href="{% url 'create_report' %}" role="button">Create Report</a>-->
+                <!-- <a class="btn btn-success btn-lg" href="{% url 'predictions' %}" role="button">View Predictions</a> -->
+            </div>
+        </div>
+    </div>
+{% endblock %}

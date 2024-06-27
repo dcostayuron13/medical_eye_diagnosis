@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
+            <h2 class="card-title mb-0">Create Report</h2>
+          </div>
+          <div class="card-body">
+            <form method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
+              {% csrf_token %}
+
+              <div class="form-group">
+                <label for="patient_name">Full Name</label>
+                {{ form.patient_name }}
+              </div>
+              <div class="form-group">
+                <label for="date_of_birth">Date of Birth</label>
+                {{ form.date_of_birth }}
+              </div>
+              <div class="form-group">
+                <label for="gender">Gender</label>
+                {{ form.gender }}
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                {{ form.phone }}
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                {{ form.email }}
+              </div>
+              <div class="form-group">
+                <label for="report_date">Report Date</label>
+                {{ form.report_date }}
+              </div>
+              <div class="form-group">
+                <label for="reason_for_visit">Reason for Visit/Consultation</label>
+                {{ form.reason_for_visit }}
+              </div>
+              <div class="form-group">
+                <label for="diagnosis">Diagnosis or Medical Condition</label>
+                {{ form.diagnosis }}
+              </div>
+              <div class="form-group">
+                <label for="treatment_plan">Treatment Plan or Recommendations</label>
+                {{ form.treatment_plan }}
+              </div>
+              <div class="form-group">
+                <label for="medications_prescribed">Medications Prescribed (if any)</label>
+                {{ form.medications_prescribed }}
+              </div>
+              <div class="form-group">
+                <label for="follow_up_instructions">Follow-up Instructions</label>
+                {{ form.follow_up_instructions }}
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
