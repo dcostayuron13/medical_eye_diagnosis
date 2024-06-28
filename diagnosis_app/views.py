@@ -31,7 +31,7 @@ def upload_image(request):
             # Identify the predicted disease
             predicted_disease = max(probabilities, key=probabilities.get)
 
-            # Subtract 0.001 from the predicted disease probability
+
             probabilities[predicted_disease] = round(float(probabilities[predicted_disease]) - 0.001, 3)
 
 
